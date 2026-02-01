@@ -1,0 +1,33 @@
+{
+  "name": "shopify-ecommerce-platform",
+  "version": "1.0.0",
+  "description": "Production-ready Shopify-integrated e-commerce platform with customizable frontend and backend",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "build": "npm run build --prefix backend && npm run build --prefix frontend",
+    "start": "node backend/dist/server.js",
+    "backend:dev": "npm run dev --prefix backend",
+    "backend:build": "npm run build --prefix backend",
+    "frontend:dev": "npm run dev --prefix frontend",
+    "frontend:build": "npm run build --prefix frontend",
+    "test": "npm run test --prefix backend",
+    "lint": "npm run lint --prefix backend && npm run lint --prefix frontend"
+  },
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "keywords": [
+    "shopify",
+    "ecommerce",
+    "react",
+    "nodejs",
+    "api"
+  ],
+  "author": "",
+  "license": "MIT"
+}
